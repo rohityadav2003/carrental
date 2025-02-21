@@ -1,0 +1,20 @@
+<!-- editImage.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Vehicle Image</title>
+</head>
+<body>
+  <h1>Edit Vehicle Image</h1>
+  <form action="/admin/upload-image/<%= vehicleId %>/<%= imageIndex %>" method="POST" enctype="multipart/form-data">
+    <label for="file">Choose a new image:</label>
+    <input type="file" name="file" accept="image/*" required />
+    <button type="submit">Upload New Image</button>
+  </form>
+
+  <h2>Current Image:</h2>
+  <img src="<%= currentImage %>" alt="Current Vehicle Image" style="max-width: 300px;" />
+</body>
+</html>

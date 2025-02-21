@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"/>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #141010;
+      }
+
+      h1 {
+        align-items: center;
+        text-transform: capitalize;
+        text-align: center;
+        color: #fff;
+      }
+
+      .sign {
+        background-color: rgb(0, 110, 255);
+        color: white;
+        text-transform: capitalize;
+        font-weight: bold;
+        padding: 1px;
+        border-radius: 5px;
+
+        text-align: center;
+      }
+
+      a {
+        color: #fff;
+      }
+
+      hr {
+        border: 0;
+        border-top: 2px solid white;
+        margin: 10px 0;
+      }
+
+      .log {
+        background-color: #113f67;
+        color: white;
+        text-transform: capitalize;
+        font-weight: bold;
+        padding: 5px;
+        border-radius: 5px;
+
+        text-align: center;
+      }
+
+      .ad {
+        background-color: red;
+        color: white;
+        text-transform: capitalize;
+        font-weight: bold;
+        padding: 5px;
+        border-radius: 5px;
+
+        text-align: center;
+      }
+
+      .card {
+        border: 1px solid aqua !important;
+        cursor: pointer;
+
+        color: white;
+      }
+
+      .card:hover {
+        box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+          0 0 200px #03e9f4;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>user registration and login and admin panel</h1>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 mb-3">
+          <div class="card sign">
+            <div class="card-body text-center">
+              <p>not register yet</p>
+              <hr />
+              <a href="/user/signuphere">signup here</a>
+            </div>
+          </div>
+        </div> 
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 mb-3">
+          <div class="card log">
+            <div class="card-body text-center">
+              <p>already registred</p>
+              <a href="/user/login">login here</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 mb-3">
+          <div class="card ad">
+            <div class="card-body text-center">
+              <p>admin panel</p>
+              <a href="/admin/adminlogin">login here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

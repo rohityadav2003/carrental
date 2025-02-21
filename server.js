@@ -1,0 +1,48 @@
+const express = require("express");
+const app = express();
+const session = require("express-session");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const path = require("path");
+
+const router = require("./router/user");
+const router1 = require("./router/admin");
+
+app.use(bodyParser.json());
+app.use(cors({
+  origin: "http://localhost:3000", 
+  credentials: true,
+}))
+
+app.use('/backend/image', express.static(path.join(__dirname, "image")));
+app.use(express.static("public"));
+
+
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
+app.use(
+  session({
+    secret: "mykey",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false },
+  })
+);
+
+mongoose
+  .connect("mongodb://127.0.0.1:27017/cartask")
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.log(err));
+
+app.use("/user", router);
+app.use("/admin", router1);
+
+app.get("/", function (req, res) {
+  res.render("index"); 
+});
+
+app.listen(1900, () => {
+  console.log("server running on port 1800");
+});

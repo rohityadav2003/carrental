@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      .sidebar {
+        position: fixed;
+        top: 56px;
+        left: 0;
+        width: 250px;
+        height: calc(100vh - 56px);
+        background-color: #343a40;
+        color: #ddd;
+        padding: 15px;
+        overflow-y: auto;
+        transition: margin-left 0.5s ease;
+      }
+
+      .sidebar .menu-item {
+        margin-bottom: 10px;
+      }
+
+      .sidebar a {
+        display: flex;
+        align-items: center;
+        color: inherit;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .sidebar a i {
+        margin-right: 10px;
+      }
+
+      .sidebar a:hover {
+        background-color: #007bff;
+        color: #fff;
+      }
+
+      .dropdown {
+        display: none;
+        padding-left: 20px;
+      }
+
+      .tog {
+        display: block;
+      }
+
+      #icon i {
+        padding-left: 89px;
+      }
+     
+      #icon2 i {
+        padding-left:73px;
+      }
+      .collapsed {
+        margin-left: -250px;
+      }
+      @media (max-width: 500px) {
+        .sidebar {
+          z-index: 1000;
+          transition: all 0.5s ease;
+          margin-left: -250px;
+        }
+        .form-container {
+          max-width: 300px;
+        }
+        .collapsed {
+          margin-left: 0px;
+        }
+      }
+      @media (max-width: 780px) {
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="side">
+      <div class="menu-item">
+        <a href="/admin/homedash">
+          <i class="fas fa-tachometer-alt"></i> Dashboard
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="#" id="drop" class="drop1">
+          <i class="fas fa-industry"></i> Brand
+          <div id="icon">
+            <i class="fas fa-chevron-down" id="dropdown-icon"></i>
+          </div>
+        </a>
+        <div class="dropdown branddrop" id="brand-dropdown">
+          <a href="/admin/brandcreate">Create Brand</a>
+          <a href="/admin/manage">Manage Brand</a>
+        </div>
+      </div>
+      <div class="menu-item">
+        <a href="#" id="drop1"> <i class="fas fa-car"></i> Vehicles 
+        <div id="icon2">
+            <i class="fas fa-chevron-down" id="dropdown-icon"></i>
+          </div>
+        </a>
+        <div class="dropdown branddrop" id="vehicle">
+          <a href="/admin/vehiclepost">post vehicles</a>
+          <a href="/admin/managevehicl">Manage vehicles</a>
+        </div>
+      </div>
+      <div class="menu-item">
+        <a href="/admin/bookings">
+          <i class="fas fa-book"></i> Manage Booking
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/admin/testo">
+          <i class="fas fa-comments"></i> Manage Testimonials
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/admin/contact">
+          <i class="fas fa-envelope"></i> Manage Contact Us Queries
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/admin/reg"> <i class="fas fa-users"></i> Registered Users </a>
+      </div>
+      <div class="menu-item">
+        <a href="/admin/page"> <i class="fas fa-file-alt"></i> Manage Pages </a>
+      </div>
+      <div class="menu-item">
+        <a href="/admin/info">
+          <i class="fas fa-phone"></i> Update Contact Info
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/admin/subs">
+          <i class="fas fa-user-check"></i> Manage Subscribers
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/admin/signout">
+          <i class="fas fa-sign-out-alt"></i> Signout
+        </a>
+      </div>
+    </div>
+
+    <script>
+      const drop = document.getElementById("drop");
+      const brand = document.getElementById("brand-dropdown");
+      drop.addEventListener("click", () => {
+        brand.classList.toggle("tog");
+      });
+      const drop1 = document.getElementById("drop1");
+      const vehicle = document.getElementById("vehicle");
+      drop1.addEventListener("click", () => {
+        vehicle.classList.toggle("tog");
+        
+      });
+      const hide = document.getElementById("sidebar-toggle");
+      const side = document.getElementById("side");
+      hide.addEventListener("click", () => {
+        side.classList.toggle("collapsed");
+      });
+    </script>
+    
+  </body>
+</html>

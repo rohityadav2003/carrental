@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+    <style>
+        .act  {
+            width: 50%;
+            margin: 90px auto;
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            margin: 10px 0;
+            padding: 8px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+      .editp{
+        color:black;
+        font-size: 30px;
+      
+      }
+         
+    </style>
+</head>
+<body>
+    <%- include('navbar') %>
+    <%- include('sidebar') %>
+    <% if (message) { %>
+        <script>
+            alert("<%= message %>");
+        </script>
+
+        <% } %>
+    <form action="/admin/edit/<%= brands._id %>" method="POST"class="act">
+        <h1 class="editp">Edit User</h1>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="brand_name" value="<%= brands.brand_name %>" required>
+        
+        
+       
+        
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

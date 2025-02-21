@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #0e7cf4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background-color: #fff;
+        width: 100%;
+        max-width: 500px;
+        padding: 0px;
+        border-radius: 10px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+      }
+
+      .form-group label {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 5px;
+        display: block;
+      }
+
+      .header {
+        background-color: #fafafa;
+        color: black;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px 10px 0 0;
+      }
+
+      .header h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      .header h2 {
+        margin: 10px 0 0;
+        font-size: 20px;
+      }
+
+      form {
+        padding: 40px;
+      }
+
+      .form-row {
+        display: flex;
+        gap: 20px;
+      }
+
+      .form-row .form-group:not(:last-child) {
+        margin-right: 10px;
+      }
+
+      button {
+        width: 100%;
+
+        background-color: #0962ea;
+        color: white;
+        border: none;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 12px;
+        margin-top: 10px;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #3a53b0;
+      }
+      input:focus {
+        border-color: #0e7cf4;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Registration and Login System</h1>
+        <hr />
+        <h2>Create Account</h2>
+      </div>
+
+      <form action="/user/signup" method="POST">
+        <div class="form-group">
+          <!-- <label for="name">Name:</label> -->
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Userame"
+          />
+        </div>
+        <div class="form-group">
+          <!-- <label for="email">Email:</label> -->
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Email address"
+          />
+        </div>
+
+        <div class="form-group">
+          <!-- <label for="password">Password:</label> -->
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder="Password"
+          />
+        </div>
+
+        <button type="submit">create an account</button>
+      </form>
+    </div>
+  </body>
+</html>

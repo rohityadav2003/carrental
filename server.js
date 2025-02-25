@@ -31,8 +31,7 @@ app.use(
   })
 );
 
-mongoose
-  .connect("mongodb://127.0.0.1:27017/cartask")
+ mongoose.connect("mongodb+srv://mongodbdatabase:rohit2003@cluster0.ppf45.mongodb.net")
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 

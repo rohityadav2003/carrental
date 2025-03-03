@@ -10,10 +10,13 @@ const router = require("./router/user");
 const router1 = require("./router/admin");
 
 app.use(bodyParser.json());
+const cors = require("cors");
+
 app.use(cors({
-  origin: "http://localhost:3000", 
+  origin: ["https://rohithitman.online"], 
   credentials: true,
-}))
+}));
+
 
 app.use('/backend/image', express.static(path.join(__dirname, "image")));
 app.use(express.static("public"));

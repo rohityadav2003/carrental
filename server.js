@@ -11,7 +11,7 @@ const router1 = require("./router/admin");
 
 app.use(bodyParser.json());
 app.use(cors({
-  origin: "http://localhost:3000", 
+  origin: "https://wwww.rohithitman.online", 
   credentials: true,
 }))
 

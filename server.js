@@ -10,7 +10,7 @@ const router = require("./router/user");
 const router1 = require("./router/admin");
 
 app.use(bodyParser.json());
-const cors = require("cors");
+
 
 app.use(cors({
   origin: ["https://rohithitman.online"], 

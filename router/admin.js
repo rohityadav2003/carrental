@@ -137,7 +137,9 @@ if (!fs.existsSync(uploadDir)) {
 }
 
 const storage = multer.diskStorage({
-  destination: "./public/uploads",
+ destination: (req, file, cb) => {
+    cb(null, uploadDir); // Ensure correct absolute path
+  },
   filename: (req, file, cb) => {
     cb(null, `${Date.now()}-${file.originalname}`);
   },

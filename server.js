@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-app.use("/uploads", express.static(uploadDir));
+
 app.use('/backend/image', express.static(path.join(__dirname, "image")));
 app.use(express.static("public"));
 
@@ -42,6 +42,6 @@ app.get("/", function (req, res) {
   res.render("index"); 
 });
 
-app.listen(2000, () => {
+app.listen(1900, () => {
   console.log("server running on port 1800");
 });

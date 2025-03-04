@@ -3,6 +3,7 @@ const router1 = express.Router();
 const path = require("path");
 const multer = require("multer");
 const app = express();
+const fs = require("fs");
 const session = require("express-session");
 const bodyparser = require("body-parser");
 const urlencoder = bodyparser.urlencoded({ extended: true });
@@ -130,6 +131,11 @@ router1.get("/apivehiclepost", async (req, res) => {
 });
 
 //multer upload image//
+const uploadDir = path.join(__dirname, "../public/uploads");
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+
 const storage = multer.diskStorage({
   destination: "./public/uploads",
   filename: (req, file, cb) => {

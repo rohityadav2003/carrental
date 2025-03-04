@@ -17,7 +17,7 @@ app.use(cors({
   credentials: true,
 }));
 
-const path = require("path");
+
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use('/backend/image', express.static(path.join(__dirname, "image")));

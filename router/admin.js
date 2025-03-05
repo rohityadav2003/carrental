@@ -331,6 +331,11 @@ router1.get("/bookings", async (req, res) => {
     res.status(500).json({ message: "Error fetching bookings" });
   }
 });
+//delete booking//
+router1.get("/delete3/:id", async (req, res) => {
+  await booking.findByIdAndDelete(req.params.id);
+  res.redirect(`/admin/bookings`);
+})
 router1.get("/apibookings", async (req, res) => {
   try {
     const bookings = await booking.find();
